@@ -1,5 +1,6 @@
 package store
 
+import shared.Quantity
 import warehouse.Article
 
 data class Product(

@@ -1,10 +1,12 @@
 package store
 
-typealias Quantity = ULong
+import shared.Quantity
 
-interface Store : Map<Product, Quantity> {
+interface Store {
 
-    fun loadCurrentRangeOfProducts(products: Set<Product>): Map<Product, Quantity>
+    fun loadCurrentRangeOfProducts(range: Set<Product>): Map<Product, Quantity>
 
-    fun sell(product: Product): Quantity
+    fun countAvailableProducts(): Map<Product, Quantity>
+
+    fun sell(product: Product): Boolean
 }
